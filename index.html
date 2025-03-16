@@ -598,6 +598,42 @@
             padding-top: 10px;
             border-top: 1px solid var(--border-color);
         }
+        
+        /* 折叠部分的样式 */
+        .collapsible {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 15px;
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+        
+        .collapsible:hover {
+            background-color: #e9ecef;
+        }
+        
+        .collapsible-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+        
+        .collapsible.active .collapsible-icon {
+            transform: rotate(180deg);
+        }
+        
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .collapsible-content.show {
+            max-height: 2000px; /* 足够大的高度以容纳内容 */
+        }
     </style>
 </head>
 <body>
@@ -878,53 +914,55 @@
             </div>
             
             <div class="research-section">
-                <h3>Past Teaching</h3>
+                <h3 class="collapsible">Past Teaching <i class="fas fa-chevron-down collapsible-icon"></i></h3>
                 
-                <div class="papers-container">
-                    <div class="paper">
-                        <h4>Ph.D. Econometrics</h4>
-                        <p><strong>Institution:</strong> Copenhagen Business School (CBS)</p>
-                        <p><strong>Year:</strong> 2012</p>
-                    </div>
-                    
-                    <div class="paper">
-                        <h4>Econometrics</h4>
-                        <p><strong>Program:</strong> Master's in Advanced Economics and Finance</p>
-                        <p><strong>Institution:</strong> Copenhagen Business School</p>
-                        <p><strong>Years:</strong> 2009-2012</p>
-                    </div>
-                    
-                    <div class="paper">
-                        <h4>Quantitative Methods</h4>
-                        <p><strong>Level:</strong> Undergraduate econometrics</p>
-                        <p><strong>Institution:</strong> Copenhagen Business School</p>
-                        <p><strong>Years:</strong> 2010-2012</p>
-                    </div>
-                    
-                    <div class="paper">
-                        <h4>Business Statistics</h4>
-                        <p><strong>Institution:</strong> Boston University</p>
-                        <p><strong>Years:</strong> 2004-2008</p>
-                    </div>
-                    
-                    <div class="paper">
-                        <h4>Introduction to Microeconomics</h4>
-                        <p><strong>Format:</strong> Lecture (225 students)</p>
-                        <p><strong>Institution:</strong> Boston University</p>
-                        <p><strong>Years:</strong> 2007, 2009</p>
-                    </div>
-                    
-                    <div class="paper">
-                        <h4>Other Courses at Boston University</h4>
-                        <p>Intermediate Microeconomics (Summer 2005, Fall 2006, Spring 2007)</p>
-                        <p>Introduction to Microeconomics (Summer 2006, 2004)</p>
-                        <p>Introduction to Macroeconomics (Fall 2006, Spring 2007)</p>
-                        <p>Labor Economics (Summer 2003)</p>
-                    </div>
-                    
-                    <div class="paper">
-                        <h4>Pre-Academic Teaching</h4>
-                        <p>Online statistics classes for high school students in rural parts of York Country, PA through Villanova University</p>
+                <div class="collapsible-content">
+                    <div class="papers-container">
+                        <div class="paper">
+                            <h4>Ph.D. Econometrics</h4>
+                            <p><strong>Institution:</strong> Copenhagen Business School (CBS)</p>
+                            <p><strong>Year:</strong> 2012</p>
+                        </div>
+                        
+                        <div class="paper">
+                            <h4>Econometrics</h4>
+                            <p><strong>Program:</strong> Master's in Advanced Economics and Finance</p>
+                            <p><strong>Institution:</strong> Copenhagen Business School</p>
+                            <p><strong>Years:</strong> 2009-2012</p>
+                        </div>
+                        
+                        <div class="paper">
+                            <h4>Quantitative Methods</h4>
+                            <p><strong>Level:</strong> Undergraduate econometrics</p>
+                            <p><strong>Institution:</strong> Copenhagen Business School</p>
+                            <p><strong>Years:</strong> 2010-2012</p>
+                        </div>
+                        
+                        <div class="paper">
+                            <h4>Business Statistics</h4>
+                            <p><strong>Institution:</strong> Boston University</p>
+                            <p><strong>Years:</strong> 2004-2008</p>
+                        </div>
+                        
+                        <div class="paper">
+                            <h4>Introduction to Microeconomics</h4>
+                            <p><strong>Format:</strong> Lecture (225 students)</p>
+                            <p><strong>Institution:</strong> Boston University</p>
+                            <p><strong>Years:</strong> 2007, 2009</p>
+                        </div>
+                        
+                        <div class="paper">
+                            <h4>Other Courses at Boston University</h4>
+                            <p>Intermediate Microeconomics (Summer 2005, Fall 2006, Spring 2007)</p>
+                            <p>Introduction to Microeconomics (Summer 2006, 2004)</p>
+                            <p>Introduction to Macroeconomics (Fall 2006, Spring 2007)</p>
+                            <p>Labor Economics (Summer 2003)</p>
+                        </div>
+                        
+                        <div class="paper">
+                            <h4>Pre-Academic Teaching</h4>
+                            <p>Online statistics classes for high school students in rural parts of York Country, PA through Villanova University</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -985,5 +1023,25 @@
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- JavaScript for collapsible sections -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var collapsibles = document.querySelectorAll('.collapsible');
+            
+            collapsibles.forEach(function(collapsible) {
+                collapsible.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    var content = this.nextElementSibling;
+                    
+                    if (content.classList.contains('show')) {
+                        content.classList.remove('show');
+                    } else {
+                        content.classList.add('show');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html> 
