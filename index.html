@@ -239,23 +239,31 @@
         }
         
         .papers-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            gap: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
             margin-top: 30px;
+            max-width: 800px;
         }
         
         .paper {
             background-color: var(--bg-color);
-            padding: 25px;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: var(--card-shadow);
             border-left: 4px solid var(--accent-color);
             transition: transform 0.3s;
+            width: 100%;
         }
         
         .paper:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
+        }
+        
+        .paper-title {
+            font-style: italic;
+            font-weight: 500;
+            margin-bottom: 5px;
         }
         
         .paper a {
@@ -263,10 +271,6 @@
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
-        }
-        
-        .paper a:hover {
-            text-decoration: underline;
         }
         
         .grant-item, .teaching-item {
@@ -530,31 +534,38 @@
                 
                 <div class="papers-container">
                     <div class="paper">
-                        <p>"Understanding complex skill utilization in the Danish labor market" with Fane Groes and Mathias Fjællegaard Jensen, forthcoming at Labour Economics.</p>
+                        <p class="paper-title">"Understanding complex skill utilization in the Danish labor market"</p>
+                        <p>with Fane Groes and Mathias Fjællegaard Jensen, forthcoming at Labour Economics.</p>
                     </div>
                     
                     <div class="paper">
-                        <p>"University Admission and the Similarity of Fields of Study: Effects on Earnings and Skill Usage" with Jensen, M. F., & le Maire, D. (2022) Labour Economics 75, 102118. <a href="https://doi.org/10.1016/j.labeco.2022.102118" target="_blank">Article Link</a>.</p>
+                        <p class="paper-title">"University Admission and the Similarity of Fields of Study: Effects on Earnings and Skill Usage"</p>
+                        <p>with Jensen, M. F., & le Maire, D. (2022) Labour Economics 75, 102118. <a href="https://doi.org/10.1016/j.labeco.2022.102118" target="_blank">Article Link</a>.</p>
                     </div>
                     
                     <div class="paper">
-                        <p>"Improving the Measurement of Earnings Dynamics." with Hryshko, D., & Manovskii, I. International Economic Review 63, no. 1 (2022): 95-124. <a href="https://doi.org/10.1111/iere.12525" target="_blank">Article Link</a>.</p>
+                        <p class="paper-title">"Improving the Measurement of Earnings Dynamics."</p>
+                        <p>with Hryshko, D., & Manovskii, I. International Economic Review 63, no. 1 (2022): 95-124. <a href="https://doi.org/10.1111/iere.12525" target="_blank">Article Link</a>.</p>
                     </div>
                     
                     <div class="paper">
-                        <p>"Who takes the child to the doctor? Mom, pretty much all of the time." With Fane Groes Applied Economics Letters (2017): 1-10. <a href="https://doi.org/10.1080/13504851.2017.1340567" target="_blank">Article Link</a>.</p>
+                        <p class="paper-title">"Who takes the child to the doctor? Mom, pretty much all of the time."</p>
+                        <p>With Fane Groes Applied Economics Letters (2017): 1-10. <a href="https://doi.org/10.1080/13504851.2017.1340567" target="_blank">Article Link</a>.</p>
                     </div>
                     
                     <div class="paper">
-                        <p>"The long term returns of attempting self-employment with regular employment as a fall back option", Labour Economics 35 (2015): 26-52. <a href="https://doi.org/10.1016/j.labeco.2015.03.013" target="_blank">Article Link</a>.</p>
+                        <p class="paper-title">"The long term returns of attempting self-employment with regular employment as a fall back option"</p>
+                        <p>Labour Economics 35 (2015): 26-52. <a href="https://doi.org/10.1016/j.labeco.2015.03.013" target="_blank">Article Link</a>.</p>
                     </div>
                     
                     <div class="paper">
-                        <p>"The effect of participation in Denmark's Innovation Network program." Economics of Innovation and New Technology (2017): 1-25.</p>
+                        <p class="paper-title">"The effect of participation in Denmark's Innovation Network program."</p>
+                        <p>Economics of Innovation and New Technology (2017): 1-25.</p>
                     </div>
                     
                     <div class="paper">
-                        <p>"Top Earners: Cross-Country Facts" with Alejandro Badel, Mark Huggett, Martin Nybom, Federal Reserve Bank of St. Louis Review, Third Quarter 2018, pp. 237-57.</p>
+                        <p class="paper-title">"Top Earners: Cross-Country Facts"</p>
+                        <p>with Alejandro Badel, Mark Huggett, Martin Nybom, Federal Reserve Bank of St. Louis Review, Third Quarter 2018, pp. 237-57.</p>
                     </div>
                 </div>
             </div>
@@ -564,11 +575,12 @@
                 
                 <div class="papers-container">
                     <div class="paper">
-                        <p>"University Education, Leadership and Gender" with Anders Sørensen, revise and resubmit, Labour Economics</p>
+                        <p class="paper-title">"University Education, Leadership and Gender"</p>
+                        <p>with Anders Sørensen, revise and resubmit, Labour Economics</p>
                     </div>
                     
                     <div class="paper">
-                        <p>"Family, Gender, and the Inheritance of Entrepreneurial Spirit: Exploring Sibling Influences"</p>
+                        <p class="paper-title">"Family, Gender, and the Inheritance of Entrepreneurial Spirit: Exploring Sibling Influences"</p>
                     </div>
                 </div>
             </div>
@@ -578,31 +590,37 @@
                 
                 <div class="papers-container">
                     <div class="paper">
-                        <p>"The effects of parental death and health shocks on children's outcomes" with Mathias Jensen, Ning Zhang, Yunbin Zhang</p>
+                        <p class="paper-title">"The effects of parental death and health shocks on children's outcomes"</p>
+                        <p>with Mathias Jensen, Ning Zhang, Yunbin Zhang</p>
                     </div>
                     
                     <div class="paper">
-                        <p>"Business studies, management decisions and rent-sharing" with Daron Acemoglu, Alex He Xi, Daniel le Maire</p>
+                        <p class="paper-title">"Business studies, management decisions and rent-sharing"</p>
+                        <p>with Daron Acemoglu, Alex He Xi, Daniel le Maire</p>
                     </div>
                     
                     <div class="paper">
-                        <p>"Harmonizing Healthcare: Leveraging Medical Consensus and Evidence to Address Inequities in Cancer Treatments" with Louise Mors and Lourdes Sosa</p>
+                        <p class="paper-title">"Harmonizing Healthcare: Leveraging Medical Consensus and Evidence to Address Inequities in Cancer Treatments"</p>
+                        <p>with Louise Mors and Lourdes Sosa</p>
                     </div>
                     
                     <div class="paper">
-                        <p>"Leadership and digital skill adoption", with Cédric Schneider and Fane Groes</p>
+                        <p class="paper-title">"Leadership and digital skill adoption"</p>
+                        <p>with Cédric Schneider and Fane Groes</p>
                     </div>
                     
                     <div class="paper">
-                        <p>"Female entrepreneurship and the child penalty: the case of Denmark"</p>
+                        <p class="paper-title">"Female entrepreneurship and the child penalty: the case of Denmark"</p>
                     </div>
                     
                     <div class="paper">
-                        <p>"Innovation and the demand for skills" with Rentian Zhu, Cedric Schneider and Hajime Shimao</p>
+                        <p class="paper-title">"Innovation and the demand for skills"</p>
+                        <p>with Rentian Zhu, Cedric Schneider and Hajime Shimao</p>
                     </div>
                     
                     <div class="paper">
-                        <p>"What drives patenting? Evidence from Inventors" with Cedric Schneider</p>
+                        <p class="paper-title">"What drives patenting? Evidence from Inventors"</p>
+                        <p>with Cedric Schneider</p>
                     </div>
                 </div>
             </div>
