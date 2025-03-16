@@ -11,144 +11,121 @@
             line-height: 1.8;
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8;
+            background-color: #fff;
             color: #333;
         }
         .container {
             width: 85%;
             max-width: 1200px;
             margin: auto;
-            overflow: hidden;
             padding: 20px;
         }
-        header {
-            background: linear-gradient(135deg, #2c3e50, #4CA1AF);
-            color: white;
-            padding: 60px 0 40px;
+        .main-nav {
             text-align: center;
-            position: relative;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
         }
-        .header-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .profile-image {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 4px solid rgba(255, 255, 255, 0.7);
-            margin-bottom: 20px;
-            object-fit: cover;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-        }
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
-        h2 {
-            font-size: 2rem;
-            color: #2c3e50;
-            margin-top: 0;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #4CA1AF;
-            display: inline-block;
-        }
-        h3 {
-            font-size: 1.5rem;
-            color: #4CA1AF;
-            margin-top: 30px;
-        }
-        h4 {
-            font-size: 1.2rem;
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-        nav {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        nav ul {
+        .main-nav ul {
             padding: 0;
             list-style: none;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
         }
-        nav ul li {
+        .main-nav ul li {
             display: inline;
-            margin: 0 20px;
+            margin: 0 25px;
         }
-        nav ul li a {
-            color: white;
+        .main-nav ul li a {
+            color: #666;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 400;
             font-size: 1.1rem;
             transition: color 0.3s;
             padding: 5px 0;
             position: relative;
         }
-        nav ul li a:after {
+        .main-nav ul li a:after {
             content: '';
             position: absolute;
             width: 0;
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: #4CA1AF;
+            background-color: #4169E1;
             transition: width 0.3s;
         }
-        nav ul li a:hover {
-            color: #4CA1AF;
+        .main-nav ul li a:hover {
+            color: #4169E1;
         }
-        nav ul li a:hover:after {
+        .main-nav ul li a:hover:after {
             width: 100%;
         }
-        .content {
-            background: white;
-            padding: 40px;
+        .main-nav ul li a.active {
+            color: #4169E1;
+            border-bottom: 2px solid #4169E1;
+        }
+        .profile-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            padding: 60px 0;
+        }
+        .profile-image-container {
+            flex: 0 0 300px;
+            margin-right: 50px;
+            margin-bottom: 30px;
+        }
+        .profile-image {
+            width: 100%;
+            border-radius: 50%;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .profile-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        .profile-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .profile-title {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #333;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-top: 60px;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: none;
+        }
+        h3 {
+            font-size: 1.5rem;
+            color: #333;
             margin-top: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            font-size: 0.9rem;
+        h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
         }
-        .social-links {
-            margin-top: 20px;
-        }
-        .social-links a {
-            color: #4CA1AF;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        .social-links a:hover {
-            color: #2c3e50;
+        .content-section {
+            margin-bottom: 60px;
         }
         .research-section {
             margin-bottom: 40px;
         }
         .research-section h3 {
-            border-bottom: 1px solid #eee;
+            border-bottom: none;
             padding-bottom: 10px;
         }
         .paper {
@@ -158,10 +135,10 @@
             transition: border-left 0.3s;
         }
         .paper:hover {
-            border-left: 3px solid #4CA1AF;
+            border-left: 3px solid #4169E1;
         }
         .paper a {
-            color: #4CA1AF;
+            color: #4169E1;
             text-decoration: none;
             transition: color 0.3s;
         }
@@ -177,7 +154,7 @@
         .teaching-award {
             background-color: #f9f9f9;
             padding: 25px;
-            border-left: 4px solid #4CA1AF;
+            border-left: 4px solid #4169E1;
             margin-bottom: 30px;
             border-radius: 0 8px 8px 0;
         }
@@ -199,90 +176,101 @@
         }
         .btn {
             display: inline-block;
-            background: linear-gradient(135deg, #2c3e50, #4CA1AF);
+            background: #4169E1;
             color: white;
             padding: 12px 25px;
             margin: 20px 0;
-            border-radius: 30px;
+            border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
         }
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            background: #3050c0;
         }
-        .section-title {
+        footer {
             text-align: center;
-            margin-bottom: 40px;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #666;
+            border-top: 1px solid #eee;
         }
-        .section-title h2 {
-            display: inline-block;
-            padding: 0 20px 10px;
-            border-bottom: 2px solid #4CA1AF;
+        .social-links {
+            margin-top: 20px;
+        }
+        .social-links a {
+            color: #4169E1;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: #2c3e50;
+        }
+        .photo-credit {
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 10px;
+            font-style: italic;
         }
         @media (max-width: 768px) {
             .container {
-                width: 95%;
+                width: 90%;
                 padding: 10px;
             }
-            .content {
-                padding: 20px;
-            }
-            h1 {
-                font-size: 2.2rem;
-            }
-            nav ul li {
-                margin: 0 10px;
+            .profile-image-container {
+                flex: 0 0 100%;
+                margin-right: 0;
+                text-align: center;
             }
             .profile-image {
-                width: 150px;
-                height: 150px;
+                width: 200px;
+                height: 200px;
+            }
+            .main-nav ul li {
+                margin: 0 10px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzRDQTFBRiIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjgwIiByPSI0MCIgZmlsbD0iI2ZmZiIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjIyMCIgcj0iOTAiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSI3MCIgeT0iMTIwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiNmZmYiPk1LRCA8L3RleHQ+PC9zdmc+" alt="Moira K Daly" class="profile-image">
-                <h1>Moira K Daly</h1>
-                <p>Associate Professor Economics<br>Copenhagen Business School</p>
-            </div>
-        </div>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#bio">Biography</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#grants">Grants</a></li>
-            <li><a href="#teaching">Teaching</a></li>
-            <li><a href="#cv">CV</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
     <div class="container">
-        <div class="content" id="bio">
-            <div class="section-title">
-                <h2>Biography</h2>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#bio" class="active">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#grants">Grants</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="profile-section">
+            <div class="profile-image-container">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzQxNjlFMSIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjgwIiByPSI0MCIgZmlsbD0iI2ZmZiIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjIyMCIgcj0iOTAiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSI3MCIgeT0iMTIwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiNmZmYiPk1LRCA8L3RleHQ+PC9zdmc+" alt="Moira K Daly" class="profile-image">
             </div>
-            <p>I am currently an Associate Professor at the Department of Economics, Copenhagen Business School and a member of the 2023 CBS Leadership Thinktank.</p>
-            
-            <p>After earning my undergraduate degree in Economics, I spent some time in the corporate world before finding my way back to academia. I started on this path by pursuing a Master's in Applied Statistics at Villanova University. It was during this time that I discovered my love for teaching and the intellectual freedom that a research environment offers. I subsequently began a Ph.D. program in Economics from Boston University.</p>
-            
-            <p>After earning my Ph.D., I joined the Copenhagen Business School as an Assistant Professor in the Department of Economics. Following a maternity leave, I served as a Senior Advisor at the Center for Economic Research. I am now delighted to be back in academia as an Associate Professor of Economics at CBS where I continue to pursue my research interests and teaching.</p>
-            
-            <p>In addition to my corporate and academic experience, I credit my 15+ years of waitressing, cooking, and managing in the food service industry for preparing me to work under pressure, multitask, and handle the various personalities I encounter in academia, both in and outside of the classroom.</p>
+            <div class="profile-info">
+                <h1 class="profile-name">Moira K Daly</h1>
+                <p class="profile-title">Associate Professor of Economics<br>Copenhagen Business School</p>
+                
+                <div id="bio">
+                    <p>I am currently an Associate Professor at the Department of Economics, Copenhagen Business School and a member of the 2023 CBS Leadership Thinktank.</p>
+                    
+                    <p>After earning my undergraduate degree in Economics, I spent some time in the corporate world before finding my way back to academia. I started on this path by pursuing a Master's in Applied Statistics at Villanova University. It was during this time that I discovered my love for teaching and the intellectual freedom that a research environment offers. I subsequently began a Ph.D. program in Economics from Boston University.</p>
+                    
+                    <p>After earning my Ph.D., I joined the Copenhagen Business School as an Assistant Professor in the Department of Economics. Following a maternity leave, I served as a Senior Advisor at the Center for Economic Research. I am now delighted to be back in academia as an Associate Professor of Economics at CBS where I continue to pursue my research interests and teaching.</p>
+                    
+                    <p>In addition to my corporate and academic experience, I credit my 15+ years of waitressing, cooking, and managing in the food service industry for preparing me to work under pressure, multitask, and handle the various personalities I encounter in academia, both in and outside of the classroom.</p>
+                </div>
+                
+                <a href="MoiraKDaly_CV.pdf" class="btn" download>Download CV</a>
+            </div>
         </div>
 
-        <div class="content" id="research">
-            <div class="section-title">
-                <h2>Research</h2>
-            </div>
+        <div class="content-section" id="research">
+            <h2>Research</h2>
             <p>My research sits at the intersection of labor economics, entrepreneurship, and organizational leadership, examining how individuals and organizations navigate career choices and digital transformation. I study how educational choices, family background, and gender shape pathways into entrepreneurship and leadership roles, while also investigating how leaders influence organizational decisions around technology adoption, innovation, and rent-sharing. A particular focus of my work is understanding skill utilization and development in an increasingly digital labor market. My research employs rigorous empirical methods to provide new insights into these interconnected economic phenomena. I hope to contribute to our understanding of how institutional, technological, and personal factors shape economic outcomes and career trajectories in modern labor markets.</p>
             
             <div class="research-section">
@@ -362,10 +350,8 @@
             </div>
         </div>
 
-        <div class="content" id="grants">
-            <div class="section-title">
-                <h2>Grants</h2>
-            </div>
+        <div class="content-section" id="grants">
+            <h2>Grants</h2>
             
             <div class="grant-item">
                 <p>Co-applicant Det Frie Forskningsråd, Danish Social Science Research Council (FSE), for 6.1MM DK, Principal Investigator Daniel le Maire, with the title "'Shaping the Corporate Management Culture" with Alex Xi He, Daron Acemoglu, Sydnee Caldwell</p>
@@ -396,10 +382,8 @@
             </div>
         </div>
 
-        <div class="content" id="teaching">
-            <div class="section-title">
-                <h2>Teaching</h2>
-            </div>
+        <div class="content-section" id="teaching">
+            <h2>Teaching</h2>
             
             <div class="teaching-award">
                 <p>Recipient of the Economics Teaching Award, Copenhagen Business School, Winter 2024</p>
@@ -443,31 +427,17 @@
             </ul>
         </div>
 
-        <div class="content" id="cv">
-            <div class="section-title">
-                <h2>Curriculum Vitae</h2>
-            </div>
-            <p>For a complete overview of my academic and professional experience, please download my CV.</p>
-            <div style="text-align: center;">
-                <a href="MoiraKDaly_CV.pdf" class="btn" download>Download CV (PDF)</a>
+        <div class="content-section" id="contact">
+            <h2>Contact</h2>
+            <p>Email: moda.eco AT cbs.dk</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/moira-k-daly/" target="_blank">LinkedIn</a>
             </div>
         </div>
 
-        <div class="content" id="contact">
-            <div class="section-title">
-                <h2>Contact</h2>
-            </div>
-            <div style="text-align: center;">
-                <p>Email: moda.eco AT cbs.dk</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/moira-k-daly/" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </div>
+        <footer>
+            <p>&copy; 2023 Moira K Daly. All rights reserved.</p>
+        </footer>
     </div>
-
-    <footer>
-        <p>&copy; 2023 Moira K Daly. All rights reserved.</p>
-    </footer>
 </body>
 </html> 
