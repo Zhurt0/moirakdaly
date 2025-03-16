@@ -637,6 +637,39 @@
         .collapsible-content.show {
             max-height: 2000px; /* 足够大的高度以容纳内容 */
         }
+        
+        .profile-social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .profile-social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--bg-color);
+            color: var(--accent-color);
+            font-size: 20px;
+            transition: all 0.3s;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .profile-social-icons a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(65, 105, 225, 0.2);
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .nber-icon {
+            width: 24px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -658,6 +691,17 @@
             <div class="profile-section">
                 <div class="profile-image-container">
                     <img src="moda.png" alt="Moira K Daly" class="profile-image">
+                    <div class="profile-social-icons">
+                        <a href="https://www.linkedin.com/in/moira-k-daly/" target="_blank" title="LinkedIn Profile">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://orcid.org/0000-0003-1387-9272" target="_blank" title="ORCID Profile">
+                            <i class="fab fa-orcid"></i>
+                        </a>
+                        <a href="https://www.nber.org/people/moira_daly?page=1&perPage=50" target="_blank" title="NBER Profile">
+                            <img src="https://www.nber.org/sites/default/files/styles/medium/public/nber-logo-1.png?itok=YELIuGjx" alt="NBER" class="nber-icon">
+                        </a>
+                    </div>
                 </div>
                 <div class="profile-info">
                     <h1 class="profile-name">Moira K Daly</h1>
