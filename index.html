@@ -4,47 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moira K Daly | Associate Professor Economics</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap">
     <style>
+        :root {
+            --primary-color: #1a365d;
+            --accent-color: #3182ce;
+            --text-color: #2d3748;
+            --light-text: #4a5568;
+            --bg-color: #ffffff;
+            --light-bg: #f7fafc;
+            --border-color: #e2e8f0;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
         body {
-            font-family: 'Source Sans Pro', sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 0;
-            background-color: #fff;
-            color: #333;
+            background-color: var(--bg-color);
+            color: var(--text-color);
         }
+        
         .container {
-            width: 85%;
+            width: 90%;
             max-width: 1200px;
             margin: auto;
-            padding: 20px;
+            padding: 0;
         }
+        
         .main-nav {
-            text-align: center;
+            background-color: var(--bg-color);
             padding: 20px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
+        
+        .main-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Lora', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
         .main-nav ul {
             padding: 0;
             list-style: none;
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             flex-wrap: wrap;
         }
+        
         .main-nav ul li {
             display: inline;
-            margin: 0 25px;
+            margin: 0 20px;
         }
+        
         .main-nav ul li a {
-            color: #666;
+            color: var(--light-text);
             text-decoration: none;
-            font-weight: 400;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-            padding: 5px 0;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s;
+            padding: 8px 0;
             position: relative;
         }
+        
         .main-nav ul li a:after {
             content: '';
             position: absolute;
@@ -52,172 +92,378 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: #4169E1;
+            background-color: var(--accent-color);
             transition: width 0.3s;
         }
+        
         .main-nav ul li a:hover {
-            color: #4169E1;
+            color: var(--accent-color);
         }
+        
         .main-nav ul li a:hover:after {
             width: 100%;
         }
+        
         .main-nav ul li a.active {
-            color: #4169E1;
-            border-bottom: 2px solid #4169E1;
+            color: var(--accent-color);
+            font-weight: 600;
         }
+        
+        .main-nav ul li a.active:after {
+            width: 100%;
+            background-color: var(--accent-color);
+        }
+        
+        .hero-section {
+            background-color: var(--light-bg);
+            padding: 80px 0;
+            margin-bottom: 60px;
+        }
+        
         .profile-section {
             display: flex;
             flex-wrap: wrap;
-            align-items: flex-start;
-            padding: 60px 0 30px;
+            align-items: center;
+            gap: 50px;
         }
+        
+        .profile-image-container {
+            flex: 0 0 300px;
+        }
+        
+        .profile-image {
+            width: 100%;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: var(--card-shadow);
+        }
+        
         .profile-info {
             flex: 1;
             min-width: 300px;
         }
+        
         .profile-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-family: 'Lora', serif;
+            font-size: 3rem;
             margin-bottom: 10px;
-            color: #333;
+            color: var(--primary-color);
+            line-height: 1.2;
         }
+        
         .profile-title {
-            font-size: 1.2rem;
-            color: #666;
+            font-size: 1.25rem;
+            color: var(--light-text);
             margin-bottom: 30px;
+            font-weight: 500;
         }
+        
         h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Lora', serif;
             font-weight: 700;
-            color: #333;
+            color: var(--primary-color);
+            line-height: 1.3;
         }
+        
         h2 {
-            font-size: 2rem;
-            margin-top: 60px;
+            font-size: 2.2rem;
             margin-bottom: 30px;
-            padding-bottom: 10px;
-            border-bottom: none;
+            position: relative;
+            display: inline-block;
         }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            bottom: -10px;
+            left: 0;
+        }
+        
         h3 {
-            font-size: 1.5rem;
-            color: #333;
-            margin-top: 30px;
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            margin-top: 40px;
+            margin-bottom: 20px;
         }
+        
         h4 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
         }
+        
+        p {
+            margin-bottom: 1.2rem;
+        }
+        
         .content-section {
-            margin-bottom: 60px;
+            margin-bottom: 80px;
+            padding: 0 20px;
         }
-        .research-section {
+        
+        .section-header {
             margin-bottom: 40px;
         }
-        .research-section h3 {
-            border-bottom: none;
-            padding-bottom: 10px;
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
         }
+        
+        .card {
+            background-color: var(--bg-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-content {
+            padding: 25px;
+        }
+        
+        .research-section {
+            margin-bottom: 60px;
+        }
+        
+        .papers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
         .paper {
-            margin-bottom: 20px;
-            padding-left: 15px;
-            border-left: 3px solid #f0f0f0;
-            transition: border-left 0.3s;
+            background-color: var(--bg-color);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            border-left: 4px solid var(--accent-color);
+            transition: transform 0.3s;
         }
+        
         .paper:hover {
-            border-left: 3px solid #4169E1;
+            transform: translateY(-5px);
         }
+        
         .paper a {
-            color: #4169E1;
+            color: var(--accent-color);
             text-decoration: none;
+            font-weight: 500;
             transition: color 0.3s;
         }
+        
         .paper a:hover {
-            color: #2c3e50;
             text-decoration: underline;
         }
+        
         .grant-item, .teaching-item {
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-        }
-        .teaching-award {
-            background-color: #f9f9f9;
+            background-color: var(--light-bg);
             padding: 25px;
-            border-left: 4px solid #4169E1;
-            margin-bottom: 30px;
-            border-radius: 0 8px 8px 0;
-        }
-        .course {
             margin-bottom: 25px;
-            padding: 15px;
             border-radius: 8px;
-            transition: background-color 0.3s;
+            box-shadow: var(--card-shadow);
         }
+        
+        .teaching-award {
+            background-color: var(--light-bg);
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: var(--card-shadow);
+        }
+        
+        .courses-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .course {
+            background-color: var(--bg-color);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        
         .course:hover {
-            background-color: #f9f9f9;
+            transform: translateY(-5px);
+            background-color: var(--light-bg);
         }
+        
         .course h4 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .course p {
+            margin: 8px 0;
+            color: var(--light-text);
+        }
+        
+        .past-teaching {
+            background-color: var(--light-bg);
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        
+        .past-teaching ul {
+            list-style-position: inside;
+            padding-left: 20px;
+        }
+        
+        .past-teaching li {
             margin-bottom: 10px;
         }
-        .course p {
-            margin: 5px 0;
-            color: #666;
-        }
+        
         .btn {
             display: inline-block;
-            background: #4169E1;
+            background: var(--accent-color);
             color: white;
-            padding: 12px 25px;
-            margin: 20px 0;
-            border-radius: 4px;
+            padding: 12px 30px;
+            margin: 25px 0;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
         }
+        
         .btn:hover {
-            background: #3050c0;
+            background: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 7px 14px rgba(49, 130, 206, 0.3);
         }
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            font-size: 0.9rem;
-            color: #666;
-            border-top: 1px solid #eee;
+        
+        .contact-section {
+            background-color: var(--light-bg);
+            padding: 60px 0;
+            margin-top: 60px;
         }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
         .social-links {
-            margin-top: 20px;
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
         }
+        
         .social-links a {
-            color: #4169E1;
+            color: var(--accent-color);
             text-decoration: none;
-            margin: 0 15px;
             font-weight: 600;
             transition: color 0.3s;
+            padding: 10px 15px;
+            border-radius: 6px;
+            background-color: var(--bg-color);
+            box-shadow: var(--card-shadow);
         }
+        
         .social-links a:hover {
-            color: #2c3e50;
+            color: var(--primary-color);
+            background-color: #f0f7ff;
         }
-        .photo-credit {
-            font-size: 0.8rem;
-            color: #999;
-            margin-top: 10px;
-            font-style: italic;
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            background-color: var(--primary-color);
+            color: white;
         }
+        
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
         @media (max-width: 768px) {
             .container {
-                width: 90%;
-                padding: 10px;
+                width: 95%;
+                padding: 0 10px;
             }
+            
+            .main-nav .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .main-nav ul {
+                justify-content: center;
+            }
+            
             .main-nav ul li {
                 margin: 0 10px;
+            }
+            
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-image-container {
+                margin: 0 auto;
+                max-width: 250px;
+            }
+            
+            h2:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .papers-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .card-container, .courses-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-section {
+                padding: 40px 0;
+            }
+            
+            .profile-name {
+                font-size: 2.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <nav class="main-nav">
+    <nav class="main-nav">
+        <div class="container">
+            <a href="#" class="logo">Moira K Daly</a>
             <ul>
                 <li><a href="#bio" class="active">About</a></li>
                 <li><a href="#research">Research</a></li>
@@ -225,113 +471,131 @@
                 <li><a href="#teaching">Teaching</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
+        </div>
+    </nav>
 
-        <div class="profile-section">
-            <div class="profile-image-container">
-                <img src="moda.png" alt="Moira K Daly" class="profile-image">
-            </div>
-            <div class="profile-info">
-                <h1 class="profile-name">Moira K Daly</h1>
-                <p class="profile-title">Associate Professor of Economics<br>Copenhagen Business School</p>
-                
-                <div id="bio">
-                    <p>I am currently an Associate Professor at the Department of Economics, Copenhagen Business School and a member of the 2023 CBS Leadership Thinktank.</p>
-                    
-                    <p>After earning my undergraduate degree in Economics, I spent some time in the corporate world before finding my way back to academia. I started on this path by pursuing a Master's in Applied Statistics at Villanova University. It was during this time that I discovered my love for teaching and the intellectual freedom that a research environment offers. I subsequently began a Ph.D. program in Economics from Boston University.</p>
-                    
-                    <p>After earning my Ph.D., I joined the Copenhagen Business School as an Assistant Professor in the Department of Economics. Following a maternity leave, I served as a Senior Advisor at the Center for Economic Research. I am now delighted to be back in academia as an Associate Professor of Economics at CBS where I continue to pursue my research interests and teaching.</p>
-                    
-                    <p>In addition to my corporate and academic experience, I credit my 15+ years of waitressing, cooking, and managing in the food service industry for preparing me to work under pressure, multitask, and handle the various personalities I encounter in academia, both in and outside of the classroom.</p>
+    <section class="hero-section">
+        <div class="container">
+            <div class="profile-section">
+                <div class="profile-image-container">
+                    <img src="moda.png" alt="Moira K Daly" class="profile-image">
                 </div>
-                
-                <a href="MoiraKDaly_CV.pdf" class="btn" download>Download CV</a>
+                <div class="profile-info">
+                    <h1 class="profile-name">Moira K Daly</h1>
+                    <p class="profile-title">Associate Professor of Economics<br>Copenhagen Business School</p>
+                    
+                    <div id="bio">
+                        <p>I am currently an Associate Professor at the Department of Economics, Copenhagen Business School and a member of the 2023 CBS Leadership Thinktank.</p>
+                        
+                        <p>After earning my undergraduate degree in Economics, I spent some time in the corporate world before finding my way back to academia. I started on this path by pursuing a Master's in Applied Statistics at Villanova University. It was during this time that I discovered my love for teaching and the intellectual freedom that a research environment offers. I subsequently began a Ph.D. program in Economics from Boston University.</p>
+                    </div>
+                    
+                    <a href="MoiraKDaly_CV.pdf" class="btn" download>Download CV</a>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="content-section">
+            <p>After earning my Ph.D., I joined the Copenhagen Business School as an Assistant Professor in the Department of Economics. Following a maternity leave, I served as a Senior Advisor at the Center for Economic Research. I am now delighted to be back in academia as an Associate Professor of Economics at CBS where I continue to pursue my research interests and teaching.</p>
+            
+            <p>In addition to my corporate and academic experience, I credit my 15+ years of waitressing, cooking, and managing in the food service industry for preparing me to work under pressure, multitask, and handle the various personalities I encounter in academia, both in and outside of the classroom.</p>
         </div>
 
         <div class="content-section" id="research">
-            <h2>Research</h2>
+            <div class="section-header">
+                <h2>Research</h2>
+            </div>
             <p>My research sits at the intersection of labor economics, entrepreneurship, and organizational leadership, examining how individuals and organizations navigate career choices and digital transformation. I study how educational choices, family background, and gender shape pathways into entrepreneurship and leadership roles, while also investigating how leaders influence organizational decisions around technology adoption, innovation, and rent-sharing. A particular focus of my work is understanding skill utilization and development in an increasingly digital labor market. My research employs rigorous empirical methods to provide new insights into these interconnected economic phenomena. I hope to contribute to our understanding of how institutional, technological, and personal factors shape economic outcomes and career trajectories in modern labor markets.</p>
             
             <div class="research-section">
                 <h3>Published Papers</h3>
                 
-                <div class="paper">
-                    <p>"Understanding complex skill utilization in the Danish labor market" with Fane Groes and Mathias Fjællegaard Jensen, forthcoming at Labour Economics.</p>
-                </div>
-                
-                <div class="paper">
-                    <p>"University Admission and the Similarity of Fields of Study: Effects on Earnings and Skill Usage" with Jensen, M. F., & le Maire, D. (2022) Labour Economics 75, 102118. <a href="https://doi.org/10.1016/j.labeco.2022.102118" target="_blank">Article Link</a>.</p>
-                </div>
-                
-                <div class="paper">
-                    <p>"Improving the Measurement of Earnings Dynamics." with Hryshko, D., & Manovskii, I. International Economic Review 63, no. 1 (2022): 95-124. <a href="https://doi.org/10.1111/iere.12525" target="_blank">Article Link</a>.</p>
-                </div>
-                
-                <div class="paper">
-                    <p>"Who takes the child to the doctor? Mom, pretty much all of the time." With Fane Groes Applied Economics Letters (2017): 1-10. <a href="https://doi.org/10.1080/13504851.2017.1340567" target="_blank">Article Link</a>.</p>
-                </div>
-                
-                <div class="paper">
-                    <p>"The long term returns of attempting self-employment with regular employment as a fall back option", Labour Economics 35 (2015): 26-52. <a href="https://doi.org/10.1016/j.labeco.2015.03.013" target="_blank">Article Link</a>.</p>
-                </div>
-                
-                <div class="paper">
-                    <p>"The effect of participation in Denmark's Innovation Network program." Economics of Innovation and New Technology (2017): 1-25.</p>
-                </div>
-                
-                <div class="paper">
-                    <p>"Top Earners: Cross-Country Facts" with Alejandro Badel, Mark Huggett, Martin Nybom, Federal Reserve Bank of St. Louis Review, Third Quarter 2018, pp. 237-57.</p>
+                <div class="papers-container">
+                    <div class="paper">
+                        <p>"Understanding complex skill utilization in the Danish labor market" with Fane Groes and Mathias Fjællegaard Jensen, forthcoming at Labour Economics.</p>
+                    </div>
+                    
+                    <div class="paper">
+                        <p>"University Admission and the Similarity of Fields of Study: Effects on Earnings and Skill Usage" with Jensen, M. F., & le Maire, D. (2022) Labour Economics 75, 102118. <a href="https://doi.org/10.1016/j.labeco.2022.102118" target="_blank">Article Link</a>.</p>
+                    </div>
+                    
+                    <div class="paper">
+                        <p>"Improving the Measurement of Earnings Dynamics." with Hryshko, D., & Manovskii, I. International Economic Review 63, no. 1 (2022): 95-124. <a href="https://doi.org/10.1111/iere.12525" target="_blank">Article Link</a>.</p>
+                    </div>
+                    
+                    <div class="paper">
+                        <p>"Who takes the child to the doctor? Mom, pretty much all of the time." With Fane Groes Applied Economics Letters (2017): 1-10. <a href="https://doi.org/10.1080/13504851.2017.1340567" target="_blank">Article Link</a>.</p>
+                    </div>
+                    
+                    <div class="paper">
+                        <p>"The long term returns of attempting self-employment with regular employment as a fall back option", Labour Economics 35 (2015): 26-52. <a href="https://doi.org/10.1016/j.labeco.2015.03.013" target="_blank">Article Link</a>.</p>
+                    </div>
+                    
+                    <div class="paper">
+                        <p>"The effect of participation in Denmark's Innovation Network program." Economics of Innovation and New Technology (2017): 1-25.</p>
+                    </div>
+                    
+                    <div class="paper">
+                        <p>"Top Earners: Cross-Country Facts" with Alejandro Badel, Mark Huggett, Martin Nybom, Federal Reserve Bank of St. Louis Review, Third Quarter 2018, pp. 237-57.</p>
+                    </div>
                 </div>
             </div>
             
             <div class="research-section">
                 <h3>Working Papers</h3>
                 
-                <div class="paper">
-                    <p>"University Education, Leadership and Gender" with Anders Sørensen, revise and resubmit, Labour Economics</p>
-                </div>
-                
-                <div class="paper">
-                    <p>"Family, Gender, and the Inheritance of Entrepreneurial Spirit: Exploring Sibling Influences"</p>
+                <div class="papers-container">
+                    <div class="paper">
+                        <p>"University Education, Leadership and Gender" with Anders Sørensen, revise and resubmit, Labour Economics</p>
+                    </div>
+                    
+                    <div class="paper">
+                        <p>"Family, Gender, and the Inheritance of Entrepreneurial Spirit: Exploring Sibling Influences"</p>
+                    </div>
                 </div>
             </div>
             
             <div class="research-section">
                 <h3>Works in Progress</h3>
                 
-                <div class="paper">
-                    <p>"The effects of parental death and health shocks on children's outcomes" with Mathias Jensen, Ning Zhang, Yunbin Zhang</p>
-                </div>
-                
-                <div class="paper">
-                    <p>"Business studies, management decisions and rent-sharing" with Daron Acemoglu, Alex He Xi, Daniel le Maire</p>
-                </div>
-                
-                <div class="paper">
-                    <p>"Harmonizing Healthcare: Leveraging Medical Consensus and Evidence to Address Inequities in Cancer Treatments" with Louise Mors and Lourdes Sosa</p>
-                </div>
-                
-                <div class="paper">
-                    <p>"Leadership and digital skill adoption", with Cédric Schneider and Fane Groes</p>
-                </div>
-                
-                <div class="paper">
-                    <p>"Female entrepreneurship and the child penalty: the case of Denmark"</p>
-                </div>
-                
-                <div class="paper">
-                    <p>"Innovation and the demand for skills" with Rentian Zhu, Cedric Schneider and Hajime Shimao</p>
-                </div>
-                
-                <div class="paper">
-                    <p>"What drives patenting? Evidence from Inventors" with Cedric Schneider</p>
+                <div class="papers-container">
+                    <div class="paper">
+                        <p>"The effects of parental death and health shocks on children's outcomes" with Mathias Jensen, Ning Zhang, Yunbin Zhang</p>
+                    </div>
+                    
+                    <div class="paper">
+                        <p>"Business studies, management decisions and rent-sharing" with Daron Acemoglu, Alex He Xi, Daniel le Maire</p>
+                    </div>
+                    
+                    <div class="paper">
+                        <p>"Harmonizing Healthcare: Leveraging Medical Consensus and Evidence to Address Inequities in Cancer Treatments" with Louise Mors and Lourdes Sosa</p>
+                    </div>
+                    
+                    <div class="paper">
+                        <p>"Leadership and digital skill adoption", with Cédric Schneider and Fane Groes</p>
+                    </div>
+                    
+                    <div class="paper">
+                        <p>"Female entrepreneurship and the child penalty: the case of Denmark"</p>
+                    </div>
+                    
+                    <div class="paper">
+                        <p>"Innovation and the demand for skills" with Rentian Zhu, Cedric Schneider and Hajime Shimao</p>
+                    </div>
+                    
+                    <div class="paper">
+                        <p>"What drives patenting? Evidence from Inventors" with Cedric Schneider</p>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="content-section" id="grants">
-            <h2>Grants</h2>
+            <div class="section-header">
+                <h2>Grants</h2>
+            </div>
             
             <div class="grant-item">
                 <p>Co-applicant Det Frie Forskningsråd, Danish Social Science Research Council (FSE), for 6.1MM DK, Principal Investigator Daniel le Maire, with the title "'Shaping the Corporate Management Culture" with Alex Xi He, Daron Acemoglu, Sydnee Caldwell</p>
@@ -363,9 +627,12 @@
         </div>
 
         <div class="content-section" id="teaching">
-            <h2>Teaching</h2>
+            <div class="section-header">
+                <h2>Teaching</h2>
+            </div>
             
             <div class="teaching-award">
+                <h4>Teaching Awards</h4>
                 <p>Recipient of the Economics Teaching Award, Copenhagen Business School, Winter 2024</p>
                 <p>Nominated for the Copenhagen Danish Society for Economics and Business Education Award 2024</p>
                 <p>Recipient of the Director of Graduate Studies Teaching Award, Boston University, Spring 2005</p>
@@ -374,50 +641,69 @@
             
             <h3>Current Courses</h3>
             
-            <div class="course">
-                <h4>Economics in the Digital Age</h4>
-                <p>Semester: Spring</p>
-                <p>Offered: 2023, 2024, 2025</p>
+            <div class="courses-container">
+                <div class="course">
+                    <h4>Economics in the Digital Age</h4>
+                    <p>Semester: Spring</p>
+                    <p>Offered: 2023, 2024, 2025</p>
+                </div>
+                
+                <div class="course">
+                    <h4>Introduction to Business Statistics</h4>
+                    <p>Semester: Summer</p>
+                    <p>Offered: 2022-2025</p>
+                </div>
+                
+                <div class="course">
+                    <h4>Math Prep Class</h4>
+                    <p>For incoming Master's students in Applied Economics and Finance</p>
+                    <p>Semester: Fall</p>
+                    <p>Offered: 2022-2023</p>
+                </div>
             </div>
             
-            <div class="course">
-                <h4>Introduction to Business Statistics</h4>
-                <p>Semester: Summer</p>
-                <p>Offered: 2022-2025</p>
-            </div>
-            
-            <div class="course">
-                <h4>Math Prep Class for incoming Master's students in Applied Economics and Finance</h4>
-                <p>Semester: Fall</p>
-                <p>Offered: 2022-2023</p>
-            </div>
-            
-            <h3>Past Teaching</h3>
-            <ul>
-                <li>Ph.D. Econometrics, Copenhagen Business School (CBS) 2012</li>
-                <li>Econometrics, Master's in Advanced Economics and Finance at CBS, 2009-2012</li>
-                <li>Quantitative Methods (undergrad econometrics), CBS, 2010-2012</li>
-                <li>Business Statistics, Boston University, 2004-2008</li>
-                <li>Introduction to Microeconomics (225 students, lecture format), Boston University, 2007, 2009</li>
-                <li>Intermediate Microeconomics, Boston University, Summer 2005, Fall 2006, Spring 2007</li>
-                <li>Introduction to Microeconomics, Boston University, Summer 2006, 2004</li>
-                <li>Introduction to Macroeconomics, Boston University, Fall 2006, Spring 2007</li>
-                <li>Labor Economics, Boston University, Summer 2003</li>
-                <li>Prior to entering academia, I taught online statistics classes to high school students in rural parts of York Country, PA through Villanova University.</li>
-            </ul>
-        </div>
-
-        <div class="content-section" id="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:moda.eco@cbs.dk">moda.eco@cbs.dk</a></p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/moira-k-daly/" target="_blank">LinkedIn</a>
+            <div class="past-teaching">
+                <h3>Past Teaching</h3>
+                <ul>
+                    <li>Ph.D. Econometrics, Copenhagen Business School (CBS) 2012</li>
+                    <li>Econometrics, Master's in Advanced Economics and Finance at CBS, 2009-2012</li>
+                    <li>Quantitative Methods (undergrad econometrics), CBS, 2010-2012</li>
+                    <li>Business Statistics, Boston University, 2004-2008</li>
+                    <li>Introduction to Microeconomics (225 students, lecture format), Boston University, 2007, 2009</li>
+                    <li>Intermediate Microeconomics, Boston University, Summer 2005, Fall 2006, Spring 2007</li>
+                    <li>Introduction to Microeconomics, Boston University, Summer 2006, 2004</li>
+                    <li>Introduction to Macroeconomics, Boston University, Fall 2006, Spring 2007</li>
+                    <li>Labor Economics, Boston University, Summer 2003</li>
+                    <li>Prior to entering academia, I taught online statistics classes to high school students in rural parts of York Country, PA through Villanova University.</li>
+                </ul>
             </div>
         </div>
-
-        <footer>
-            <p>&copy; 2023 Moira K Daly. All rights reserved.</p>
-        </footer>
     </div>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <p><strong>Email:</strong> <a href="mailto:moda.eco@cbs.dk">moda.eco@cbs.dk</a></p>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/moira-k-daly/" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Moira K Daly. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html> 
