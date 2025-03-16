@@ -4,128 +4,253 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moira K Daly | Associate Professor Economics</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.8;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f8f8f8;
             color: #333;
         }
         .container {
-            width: 80%;
+            width: 85%;
+            max-width: 1200px;
             margin: auto;
             overflow: hidden;
             padding: 20px;
         }
         header {
-            background: #50b3a2;
+            background: linear-gradient(135deg, #2c3e50, #4CA1AF);
             color: white;
-            padding: 30px 0;
+            padding: 60px 0 40px;
             text-align: center;
+            position: relative;
+        }
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4CA1AF;
+            display: inline-block;
+        }
+        h3 {
+            font-size: 1.5rem;
+            color: #4CA1AF;
+            margin-top: 30px;
+        }
+        h4 {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 5px;
         }
         nav {
-            background: #333;
+            background: #2c3e50;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         nav ul {
             padding: 0;
             list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         nav ul li {
             display: inline;
-            margin: 0 15px;
+            margin: 0 20px;
         }
         nav ul li a {
             color: white;
             text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #4CA1AF;
+            transition: width 0.3s;
         }
         nav ul li a:hover {
-            color: #50b3a2;
+            color: #4CA1AF;
+        }
+        nav ul li a:hover:after {
+            width: 100%;
         }
         .content {
             background: white;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-top: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         footer {
-            background: #333;
+            background: #2c3e50;
             color: white;
             text-align: center;
-            padding: 10px;
-            margin-top: 20px;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
         }
         .social-links {
             margin-top: 20px;
         }
         .social-links a {
-            color: #50b3a2;
+            color: #4CA1AF;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: #2c3e50;
         }
         .research-section {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         .research-section h3 {
-            color: #50b3a2;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
         }
         .paper {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 3px solid #f0f0f0;
+            transition: border-left 0.3s;
+        }
+        .paper:hover {
+            border-left: 3px solid #4CA1AF;
         }
         .paper a {
-            color: #50b3a2;
+            color: #4CA1AF;
             text-decoration: none;
+            transition: color 0.3s;
         }
         .paper a:hover {
+            color: #2c3e50;
             text-decoration: underline;
         }
         .grant-item, .teaching-item {
-            margin-bottom: 20px;
-            padding-bottom: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
             border-bottom: 1px solid #eee;
         }
         .teaching-award {
             background-color: #f9f9f9;
-            padding: 15px;
-            border-left: 4px solid #50b3a2;
-            margin-bottom: 20px;
+            padding: 25px;
+            border-left: 4px solid #4CA1AF;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
         }
         .course {
-            margin-bottom: 15px;
+            margin-bottom: 25px;
+            padding: 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+        .course:hover {
+            background-color: #f9f9f9;
         }
         .course h4 {
-            margin-bottom: 5px;
-            color: #50b3a2;
+            margin-bottom: 10px;
         }
         .course p {
             margin: 5px 0;
+            color: #666;
         }
         .btn {
             display: inline-block;
-            background: #50b3a2;
+            background: linear-gradient(135deg, #2c3e50, #4CA1AF);
             color: white;
-            padding: 10px 20px;
-            margin: 15px 0;
-            border-radius: 5px;
+            padding: 12px 25px;
+            margin: 20px 0;
+            border-radius: 30px;
             text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .btn:hover {
-            background: #3a8a7e;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-title h2 {
+            display: inline-block;
+            padding: 0 20px 10px;
+            border-bottom: 2px solid #4CA1AF;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 10px;
+            }
+            .content {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            nav ul li {
+                margin: 0 10px;
+            }
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Moira K Daly</h1>
-            <p>Associate Professor Economics<br>Copenhagen Business School</p>
+            <div class="header-content">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzRDQTFBRiIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjgwIiByPSI0MCIgZmlsbD0iI2ZmZiIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjIyMCIgcj0iOTAiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSI3MCIgeT0iMTIwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiNmZmYiPk1LRCA8L3RleHQ+PC9zdmc+" alt="Moira K Daly" class="profile-image">
+                <h1>Moira K Daly</h1>
+                <p>Associate Professor Economics<br>Copenhagen Business School</p>
+            </div>
         </div>
     </header>
 
@@ -142,7 +267,9 @@
 
     <div class="container">
         <div class="content" id="bio">
-            <h2>Biography</h2>
+            <div class="section-title">
+                <h2>Biography</h2>
+            </div>
             <p>I am currently an Associate Professor at the Department of Economics, Copenhagen Business School and a member of the 2023 CBS Leadership Thinktank.</p>
             
             <p>After earning my undergraduate degree in Economics, I spent some time in the corporate world before finding my way back to academia. I started on this path by pursuing a Master's in Applied Statistics at Villanova University. It was during this time that I discovered my love for teaching and the intellectual freedom that a research environment offers. I subsequently began a Ph.D. program in Economics from Boston University.</p>
@@ -153,7 +280,9 @@
         </div>
 
         <div class="content" id="research">
-            <h2>Research</h2>
+            <div class="section-title">
+                <h2>Research</h2>
+            </div>
             <p>My research sits at the intersection of labor economics, entrepreneurship, and organizational leadership, examining how individuals and organizations navigate career choices and digital transformation. I study how educational choices, family background, and gender shape pathways into entrepreneurship and leadership roles, while also investigating how leaders influence organizational decisions around technology adoption, innovation, and rent-sharing. A particular focus of my work is understanding skill utilization and development in an increasingly digital labor market. My research employs rigorous empirical methods to provide new insights into these interconnected economic phenomena. I hope to contribute to our understanding of how institutional, technological, and personal factors shape economic outcomes and career trajectories in modern labor markets.</p>
             
             <div class="research-section">
@@ -234,7 +363,9 @@
         </div>
 
         <div class="content" id="grants">
-            <h2>Grants</h2>
+            <div class="section-title">
+                <h2>Grants</h2>
+            </div>
             
             <div class="grant-item">
                 <p>Co-applicant Det Frie Forskningsråd, Danish Social Science Research Council (FSE), for 6.1MM DK, Principal Investigator Daniel le Maire, with the title "'Shaping the Corporate Management Culture" with Alex Xi He, Daron Acemoglu, Sydnee Caldwell</p>
@@ -266,7 +397,9 @@
         </div>
 
         <div class="content" id="teaching">
-            <h2>Teaching</h2>
+            <div class="section-title">
+                <h2>Teaching</h2>
+            </div>
             
             <div class="teaching-award">
                 <p>Recipient of the Economics Teaching Award, Copenhagen Business School, Winter 2024</p>
@@ -311,16 +444,24 @@
         </div>
 
         <div class="content" id="cv">
-            <h2>Curriculum Vitae</h2>
+            <div class="section-title">
+                <h2>Curriculum Vitae</h2>
+            </div>
             <p>For a complete overview of my academic and professional experience, please download my CV.</p>
-            <a href="MoiraKDaly_CV.pdf" class="btn" download>Download CV (PDF)</a>
+            <div style="text-align: center;">
+                <a href="MoiraKDaly_CV.pdf" class="btn" download>Download CV (PDF)</a>
+            </div>
         </div>
 
         <div class="content" id="contact">
-            <h2>Contact</h2>
-            <p>Email: moda.eco AT cbs.dk</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/moira-k-daly/" target="_blank">LinkedIn</a>
+            <div class="section-title">
+                <h2>Contact</h2>
+            </div>
+            <div style="text-align: center;">
+                <p>Email: moda.eco AT cbs.dk</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/moira-k-daly/" target="_blank">LinkedIn</a>
+                </div>
             </div>
         </div>
     </div>
