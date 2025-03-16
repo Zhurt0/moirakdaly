@@ -438,13 +438,14 @@
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
-            padding: 12px 20px;
-            border-radius: 6px;
+            padding: 15px 25px;
+            border-radius: 8px;
             background-color: var(--bg-color);
             box-shadow: var(--card-shadow);
             display: flex;
             align-items: center;
             justify-content: center;
+            min-width: 160px;
         }
         
         .social-links a:hover {
@@ -452,6 +453,22 @@
             background-color: #f0f7ff;
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(65, 105, 225, 0.2);
+        }
+        
+        .social-links a i {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        
+        .linkedin-btn {
+            background-color: #f8f9fa !important;
+            color: #0a66c2 !important;
+            border: 1px solid #e1e4e8;
+        }
+        
+        .linkedin-btn:hover {
+            background-color: #f0f7ff !important;
+            border-color: #0a66c2;
         }
         
         footer {
@@ -951,7 +968,9 @@
                     </div>
                     
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/moira-k-daly/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/moira-k-daly/" target="_blank" class="linkedin-btn">
+                            <i class="fab fa-linkedin"></i>LinkedIn
+                        </a>
                     </div>
                 </div>
             </div>
