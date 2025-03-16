@@ -116,16 +116,16 @@
         }
         
         .hero-section {
-            background-color: var(--light-bg);
-            padding: 80px 0;
-            margin-bottom: 60px;
+            background-color: var(--bg-color);
+            padding: 60px 0;
+            margin-bottom: 40px;
         }
         
         .profile-section {
             display: flex;
             flex-wrap: wrap;
-            align-items: center;
-            gap: 50px;
+            align-items: flex-start;
+            gap: 40px;
         }
         
         .profile-image-container {
@@ -460,6 +460,22 @@
                 font-size: 2.5rem;
             }
         }
+        
+        .bio-section {
+            background-color: var(--light-bg);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .bio-section p {
+            margin-bottom: 15px;
+        }
+        
+        .bio-section p:last-child {
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -486,10 +502,14 @@
                     <h1 class="profile-name">Moira K Daly</h1>
                     <p class="profile-title">Associate Professor of Economics<br>Copenhagen Business School</p>
                     
-                    <div id="bio">
+                    <div id="bio" class="bio-section">
                         <p>I am currently an Associate Professor at the Department of Economics, Copenhagen Business School and a member of the 2023 CBS Leadership Thinktank.</p>
                         
                         <p>After earning my undergraduate degree in Economics, I spent some time in the corporate world before finding my way back to academia. I started on this path by pursuing a Master's in Applied Statistics at Villanova University. It was during this time that I discovered my love for teaching and the intellectual freedom that a research environment offers. I subsequently began a Ph.D. program in Economics from Boston University.</p>
+                    
+                        <p>After earning my Ph.D., I joined the Copenhagen Business School as an Assistant Professor in the Department of Economics. Following a maternity leave, I served as a Senior Advisor at the Center for Economic Research. I am now delighted to be back in academia as an Associate Professor of Economics at CBS where I continue to pursue my research interests and teaching.</p>
+                        
+                        <p>In addition to my corporate and academic experience, I credit my 15+ years of waitressing, cooking, and managing in the food service industry for preparing me to work under pressure, multitask, and handle the various personalities I encounter in academia, both in and outside of the classroom.</p>
                     </div>
                     
                     <a href="MoiraKDaly_CV.pdf" class="btn" target="_blank">View CV</a>
@@ -499,12 +519,6 @@
     </section>
 
     <div class="container">
-        <div class="content-section">
-            <p>After earning my Ph.D., I joined the Copenhagen Business School as an Assistant Professor in the Department of Economics. Following a maternity leave, I served as a Senior Advisor at the Center for Economic Research. I am now delighted to be back in academia as an Associate Professor of Economics at CBS where I continue to pursue my research interests and teaching.</p>
-            
-            <p>In addition to my corporate and academic experience, I credit my 15+ years of waitressing, cooking, and managing in the food service industry for preparing me to work under pressure, multitask, and handle the various personalities I encounter in academia, both in and outside of the classroom.</p>
-        </div>
-
         <div class="content-section" id="research">
             <div class="section-header">
                 <h2>Research</h2>
